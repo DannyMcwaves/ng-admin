@@ -6,9 +6,8 @@ import { of } from 'rxjs/observable/of';
 
 @Injectable()
 export class ListService{
-  constructor(public http:HttpClientModule) {
 
-  }
+  constructor(public http:HttpClientModule) {}
 
   getLists(): Observable<string[]>{
     return of(ListData);
