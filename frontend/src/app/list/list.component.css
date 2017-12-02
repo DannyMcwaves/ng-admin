@@ -1,0 +1,13 @@
+.hand{
+  cursor: pointer;
+}
+li[contenteditable='true'] {
+  outline: 0;
+  border: 1px solid deepskyblue;
+}
+/*li{*/
+  /*margin-bottom: 1px;*/
+/*}*/
+:host(app-list){
+  margin-bottom: 1px !important;
+}
