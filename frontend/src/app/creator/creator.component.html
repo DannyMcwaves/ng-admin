@@ -1,0 +1,27 @@
+<div class="container-fluid">
+
+  <div class="container">
+
+    <h1 class="text-center p-2">TODO-ISH</h1>
+
+    <form class="row" #heroForm="ngForm">
+
+      <div class="form-group col-8">
+        <input placeholder="enter todo item" type="text" class="form-control" id="name" required [(ngModel)]="current_name" name="name" #name="ngModel">
+        <div [hidden]="name.valid || name.pristine" class=" mt-2 alert alert-danger"> Name is required </div>
+      </div>
+
+      <div class="form-group col-4">
+        <label for="power"></label>
+        <button [disabled]="!name.valid" id="power" class="btn btn-sm btn-success" (click)="add(name.value); name.value='';">Add</button>
+      </div>
+
+    </form>
+
+    <ul class="list-group">
+      <app-list *ngFor="let i of powers" [data]="i" [index]="powers.indexOf(i)" (dataChange)="dataChange($event)"></app-list>
+    </ul>
+
+  </div>
+
+</div>
